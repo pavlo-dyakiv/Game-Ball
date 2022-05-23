@@ -94,7 +94,7 @@ class Ball:
             self.hit_bottom = True  # We mark it in a separate variable
 
             # display a message and number of glasses
-            canvas.create_text(250, 120, text='Sorry, You are lost', font=('Courier', 30), fill='pink')
+            canvas.create_text(250, 120, text='Sorry, You are lost', font=('Courier', 30), fill='blue')
 
         if self.hit_paddle(pos) == True:    # If there was a touch of the platform
             self.y = -2   # Send the ball upstairs
@@ -170,7 +170,7 @@ class Score:
         self.canvas.itemconfig(self.id, text=self.score)    # We write a new account value
 
 
-score = Score(canvas, 'yellow')   # Create an object - yellow account
+score = Score(canvas, 'brown')   # Create an object - yellow account
 paddle = Paddle(canvas, 'gray')    # Create an object - a green platform
 ball = Ball(canvas, paddle, score, 'purple')    # Create an object - purple ball
 while not ball.hit_bottom:   # Until the ball has touched the bottom
