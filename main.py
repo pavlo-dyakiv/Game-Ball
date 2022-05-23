@@ -5,19 +5,19 @@ import time
 import random
 
 print('Press "Enter" fot start a game')
-tk = Tk()   # create a new object - a window with a game field
-tk.title('GameBall')  # make a window title - Games using the property of the Title object
-tk.resizable(None, None)   # prohibit changing the size of the window, for this we use the property of Resizable
+window = Tk()   # create a new object - a window with a game field
+window.title('GameBall')  # make a window title - Games using the property of the Title object
+window.resizable(None, None)   # prohibit changing the size of the window, for this we use the property of Resizable
 
 # placing our game window above the rest of the windows on the computer so that other windows can not obscure it
-tk.wm_attributes('-topmost', 1)
+window.wm_attributes('-topmost', 1)
 
 # create a new canvas - 400 by 500 pixels, where we will draw the game
-canvas = Canvas(tk, width=500, height=400, highlightthickness=0)
+canvas = Canvas(window, width=500, height=400, highlightthickness=0)
 
 canvas.pack()   # tell the canvas that each visible element will have its own separate coordinates
 
-tk.update()   # update the window with canvas
+window.update()   # update the window with canvas
 
 
 # describe the class Ball, which will be responsible for the ball
@@ -177,8 +177,8 @@ while not ball.hit_bottom:   # Until the ball has touched the bottom
     if paddle.started == True:   # If the game has begun and the platform can move
         ball.draw_ball()   # move the ball
         paddle.draw_canvas()   # move the platform
-    tk.update_idletasks()     # We update our playing field so that everything you need is to be drawn
-    tk.update()   # We update the game field, and look to ensure that everything that should have been done is done
+    window.update_idletasks()     # We update our playing field so that everything you need is to be drawn
+    window.update()   # We update the game field, and look to ensure that everything that should have been done is done
     time.sleep(0.01)    # We freeze for one hundred seconds so that the movement of the elements looks smooth
 
 # If the program has reached a long time, then the ball touched the bottom.
