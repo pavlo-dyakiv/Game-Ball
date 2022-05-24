@@ -4,7 +4,6 @@ from tkinter import *   # connect the graphic library
 import time
 import random
 
-print('Press "Enter" fot start a game')
 window = Tk()   # create a new object - a window with a game field
 window.title('GameBall')  # make a window title - Games using the property of the Title object
 window.resizable(None, None)   # prohibit changing the size of the window, for this we use the property of Resizable
@@ -108,6 +107,7 @@ class Ball:
 
 class Paddle:   # Describing the Paddle class, which is responsible for the platforms
     def __init__(self, canvas, color):    # constructor
+        canvas.create_text(250, 90, text='Click "Enter" to get started game', font=('Courier', 15), fill='blue')
         self.canvas = canvas    # canvas means that the platform will be drawn on our original canvas
 
         # Create a rectangular platform of 10 per 100 pixels, paint over the chosen color and get its inner name
